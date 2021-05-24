@@ -1,2 +1,8 @@
 # Fourier-Series
- Tracing to Fourier Series converter
+Converts a seamless drawing into a Complex Fourier Series
+
+## Demo
+![Alt Text](https://github.com/SaxyCat/Fourier-Series/blob/main/demo/demo.mp4)
+
+
+Run src/main.py to execute repo
