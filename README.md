@@ -5,4 +5,4 @@ Converts a seamless drawing into a Complex Fourier Series
 ![Alt Text](https://github.com/SaxyCat/Fourier-Series/blob/main/demo/demo.gif)
 
 
-Run src/main.py to execute repo
+Run `src/main.py` to execute repo
