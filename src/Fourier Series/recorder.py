@@ -1,4 +1,5 @@
 # records and translates drawing data, returns c_n values for display.py
+
 import pygame
 import config
 
@@ -46,6 +47,7 @@ def recorder():
                 if len(path) > 1:
                     pygame.draw.line(WINDOW, (255, 255, 255), path[-2], path[-1], 3)
 
+                pygame.draw.circle(WINDOW, (255, 0, 0), path[0], 3)  # starting point
                 pygame.display.update()
         else:
             if drawn:

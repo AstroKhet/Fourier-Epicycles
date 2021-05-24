@@ -1,7 +1,8 @@
 # File that draws the epicycles given the inputs of constants c_n: Complex
+
 import pygame
 import config
-from math import cos, sin, pi
+from math import cos, sin, pi, sqrt
 
 
 # Initialization
@@ -17,6 +18,11 @@ def vector_add(v1, v2):
     v_sum_0 = v1[0] + v2[0]
     v_sum_1 = v1[1] + v2[1]
     return [v_sum_0, v_sum_1]
+
+
+def vector_distance(v1, v2):
+    # returns the distance between two vectors/coordinates
+    return sqrt((v1[0] - v2[0])**2 + (v1[1] - v2[1])**2)
 
 
 def translate(a, b):
@@ -50,7 +56,16 @@ def fourier(n_values, c_of_n, t, canvas):
         # print(translate(*v_a), translate(*v_b))
         v_a = v_b
         v_b = vector_add(v_b, identity(epicycles[i][0], epicycles[i][1], t))
-        pygame.draw.line(WINDOW, (255, 255, 255), translate(*v_a), translate(*v_b), width=2)
+
+        v_at = translate(*v_a)
+        v_bt = translate(*v_b)
+
+        # cycle =
+        cycle_radius = vector_distance(v_at, v_bt)
+        if cycle_radius >= 1:  # optimization
+            pygame.draw.circle(WINDOW, (0, 0, 155, 10), v_at, cycle_radius, width=2)
+
+        pygame.draw.line(WINDOW, (255, 255, 255), v_at, v_bt, width=2)
 
     v_res = translate(*v_b)
     if v_res not in canvas:
@@ -83,9 +98,11 @@ def display(c_of_n, path_len):
 
         pygame.display.update()
 
-        t_delta += 1 * config.REPLAY_SPEED
+        # still need to fix this time issue here
+        t_delta += config.REPLAY_SPEED
         if t_delta >= path_len:
             t_delta = 0
+            canvas = []
 
 
 

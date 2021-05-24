@@ -7,5 +7,5 @@ DELTA = 0.01     # used for approximating integral f(t), the smaller the better 
 INTERVAL = 0.01  # time interval per recorded activity
 
 # Replaying
-VECTORS = 80     # non-inclusive of c_0
-REPLAY_SPEED = 0.25
+VECTORS = 300     # non-inclusive of c_0
+REPLAY_SPEED = 0.1
