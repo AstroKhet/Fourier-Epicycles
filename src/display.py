@@ -1,4 +1,4 @@
-# File that draws the epicycles given the inputs of constants c_n: Complex
+# draws the epicycles given the inputs of constants c_n's
 
 import pygame
 import config

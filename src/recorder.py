@@ -1,4 +1,4 @@
-# records and translates drawing data, returns c_n values for display.py
+# records and translates drawing data, returns path values for coeff.py
 
 import pygame
 import config

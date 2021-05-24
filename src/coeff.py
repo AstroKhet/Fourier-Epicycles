@@ -1,4 +1,4 @@
-# Calculates fourier coefficients from recorder.py
+# calculates fourier coefficients from recorder.py for display.py
 
 import config
 from math import ceil, cos, sin, pi
