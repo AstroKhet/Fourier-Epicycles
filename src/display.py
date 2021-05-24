@@ -53,7 +53,7 @@ def fourier(n_values, c_of_n, t, canvas):
     v_b = identity(epicycles[0][0], epicycles[0][1], t)  # vector_beta // center of mass
 
     for i in range(1, len(n_values)):
-        # print(translate(*v_a), translate(*v_b))
+
         v_a = v_b
         v_b = vector_add(v_b, identity(epicycles[i][0], epicycles[i][1], t))
 
